@@ -49,11 +49,10 @@ public class App {
         }
     }
 
-        public void StartClient(){
+        public void StartClient(String ip){
             try {
                 //创建Socket对象
-                Socket socket=new Socket("localhost",8888);
-
+                Socket socket=new Socket(ip/*localhost*/,8888);
                 //根据输入输出流和服务端连接
                 OutputStream outputStream=socket.getOutputStream();//获取一个输出流，向服务端发送信息
                 PrintWriter printWriter=new PrintWriter(outputStream);//将输出流包装成打印流
